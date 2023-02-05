@@ -1,0 +1,25 @@
+/* ************************************ Import -footer.scss ********************* */
+footer{
+  background-color: $footer-color;
+  color: $blanc;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 30px;
+  & h2{
+    font-family: 'Shrikhand', cursive;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0 0 20px 0;
+  }
+  & .proposer-resto, & .partenaire{
+    display: flex;
+    align-items: center;
+  }
+  & i{
+    margin: 0 10px 0 0;
+  }
+  & p{
+    margin: 5px 0px;
+    font-weight: 400;
+  }
+}

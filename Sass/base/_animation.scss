@@ -1,0 +1,66 @@
+/* ******************************** import _animation.scss ************ */
+@keyframes rotation{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes grossissement{
+    0%{
+        transform: scale(0.4);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes fade{
+    0%{
+        opacity:1;
+        position: fixed;
+    }
+    90%{
+        opacity:1;
+        position: fixed;
+    }
+    100%{
+        opacity:0;
+    }
+}
+@keyframes cache{
+    0%{
+        opacity: 0.17;
+    }
+    90%{
+        opacity: 0.17;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes descente{
+    0%{
+        transform:  translateY(-30px);
+    }
+    
+    100%{
+        transform:  translateY(0px);
+    }
+}
+@keyframes montee{
+    0%{
+        transform: translateY(30px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+@keyframes apparitionProgressive{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
