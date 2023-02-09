@@ -1,0 +1,730 @@
+@charset "UTF-8";
+/* **************************Import variables.scss ***************** */ /* ************************* Import_Loader spinner ************ */
+.loader-spinner {
+  overflow: visible;
+  height: 100vh;
+  margin: 0;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fade 3s forwards;
+  position: relative;
+}
+
+.barre {
+  position: absolute;
+  height: 250px;
+  width: 100px;
+  background-color: transparent;
+  animation: 2s linear rotation infinite;
+}
+.barre--0 {
+  animation-delay: 0s;
+}
+.barre--1 {
+  animation-delay: 0.2s;
+}
+.barre--2 {
+  animation-delay: 0.4s;
+}
+.barre--3 {
+  animation-delay: 0.6s;
+}
+.barre--4 {
+  animation-delay: 0.8s;
+}
+.barre--5 {
+  animation-delay: 1s;
+}
+.barre--6 {
+  animation-delay: 1.2s;
+}
+.barre--7 {
+  animation-delay: 1.4s;
+}
+.barre--8 {
+  animation-delay: 1.6s;
+}
+.barre--9 {
+  animation-delay: 1.8s;
+}
+
+.cercle {
+  width: 50px;
+  height: 50px;
+  background-color: #9356DC;
+  position: absolute;
+  left: 25px;
+  top: 5px;
+  border-radius: 50px;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  animation: 0.5s linear grossissement alternate infinite backwards;
+}
+.cercle--0 {
+  animation-delay: 0s;
+}
+.cercle--1 {
+  animation-delay: 0.2s;
+}
+.cercle--2 {
+  animation-delay: 0.4s;
+}
+.cercle--3 {
+  animation-delay: 0.6s;
+}
+.cercle--4 {
+  animation-delay: 0.8s;
+}
+.cercle--5 {
+  animation-delay: 1s;
+}
+.cercle--6 {
+  animation-delay: 1.2s;
+}
+.cercle--7 {
+  animation-delay: 1.4s;
+}
+.cercle--8 {
+  animation-delay: 1.6s;
+}
+.cercle--9 {
+  animation-delay: 1.8s;
+}
+
+/* *************************************** Import _base.scss ******************* */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 20px 0 0 0;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 20px 0px;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+footer a {
+  color: #FFFFFF;
+}
+
+.icone {
+  font-size: 1.4rem;
+  margin: 0 20px;
+  color: #7E7E7E;
+}
+
+.btn {
+  border-radius: 25px;
+  padding: 15px;
+  font-weight: 700;
+  color: #FFFFFF;
+  box-shadow: 0px 5px 5px #E9E9E9;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+}
+.btn:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 5px 5px #7E7E7E;
+  cursor: pointer;
+}
+
+.coeur {
+  font-size: 1.8rem;
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+.coeur i:nth-child(1) {
+  position: absolute;
+  opacity: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.coeur i:nth-child(2) {
+  position: absolute;
+  transition: 0.5s opacity;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: linear-gradient(to bottom, #9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.coeur i:nth-child(2):hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* ******************************** import _animation.scss ************ */
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes grossissement {
+  0% {
+    transform: scale(0.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 1;
+    position: fixed;
+  }
+  90% {
+    opacity: 1;
+    position: fixed;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes cache {
+  0% {
+    opacity: 0.17;
+  }
+  90% {
+    opacity: 0.17;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes descente {
+  0% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes montee {
+  0% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes apparitionProgressive {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* ************************************ Import header.scss ************************ */
+header {
+  display: flex;
+  position: relative;
+  background-color: #FFFFFF;
+}
+
+.entete__logo {
+  height: 35px;
+  margin: 30px auto 20px;
+}
+
+.fa-arrow-left {
+  position: absolute;
+  top: 40%;
+  left: 25px;
+  font-size: 25px;
+  font-weight: 900;
+  transform: scale(1);
+  transition: transform 0.3s;
+}
+.fa-arrow-left:hover {
+  transform: scale(1.2);
+}
+
+/* ************************************ Import -footer.scss ********************* */
+footer {
+  background-color: #353535;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 30px;
+}
+footer h2 {
+  font-family: "Shrikhand", cursive;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0 0 20px 0;
+}
+footer .proposer-resto, footer .partenaire {
+  display: flex;
+  align-items: center;
+}
+footer i {
+  margin: 0 10px 0 0;
+}
+footer p {
+  margin: 5px 0px;
+  font-weight: 400;
+}
+
+/* ************************* Import Page Accueil ******************* */
+.page-accueil {
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+}
+
+.main-accueil {
+  position: absolute;
+  animation: cache 3s linear forwards, descente 0.6s ease 3s both;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.presentation {
+  display: flex;
+  flex-direction: column;
+}
+
+.localisation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaeaea;
+  border-top: 4px solid #D4D4D4;
+}
+
+.fa-location-dot {
+  margin-right: 15px;
+  font-size: 1rem;
+  color: #000000;
+}
+
+.reservez {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(#FFFFFF, #F7F7F7);
+  padding: 30px;
+}
+.reservez__description {
+  font-weight: 300;
+}
+
+nav {
+  padding: 30px 20px;
+}
+
+.choisissez, .composez, .degustez {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0px 0px 20px 15px;
+  font-size: 1.2rem;
+  background: #F7F7F7;
+  box-shadow: 2px 2px 5px #E9E9E9;
+  font-weight: 700;
+  border-radius: 25px;
+  position: relative;
+}
+
+.selection:hover {
+  background: #F5EDFF;
+  box-shadow: 2px 2px 5px #7E7E7E;
+  cursor: pointer;
+}
+.selection:hover i {
+  color: #9356DC;
+}
+
+.chiffre {
+  position: absolute;
+  left: -15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #FFFFFF;
+  background-color: #9356DC;
+}
+
+.restaurants {
+  background-color: #F7F7F7;
+  padding: 30px 20px 40px;
+}
+.restaurants__fiche {
+  margin: 20px 0;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px #E9E9E9;
+  transform: scale(1);
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+.restaurants__fiche:hover {
+  transform: scale(1.03);
+  box-shadow: 2px 2px 5px #7E7E7E;
+}
+.restaurants__image {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  height: 200px;
+}
+.restaurants__image img {
+  border-radius: 20px 20px 0 0;
+  object-position: 0 60%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.restaurants__image p {
+  position: absolute;
+  font-size: 1rem;
+  top: 10px;
+  right: 10px;
+  padding: 6px;
+  margin: 0;
+  color: #008766;
+  background-color: #99E2D0;
+}
+.restaurants__descriptif {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  height: 50px;
+}
+.restaurants__texte {
+  flex-direction: column;
+}
+.restaurants__texte h3 {
+  margin: 0px;
+  font-size: 1.2rem;
+  height: 25px;
+}
+.restaurants__texte p {
+  font-weight: 300;
+  margin: 0px;
+}
+
+@media screen and (min-width: 992px) { /* ************ Version Desktop ****************** */
+  .reservez {
+    padding: 10px;
+  }
+  .reservez p {
+    margin: 0 0 20px;
+  }
+  .reservez h1 {
+    margin: 10px 0;
+  }
+  br {
+    display: none;
+  }
+  .choix {
+    display: flex;
+    justify-content: center;
+  }
+  .selection {
+    width: 300px;
+    margin: 0 15px;
+  }
+  .restos {
+    display: flex;
+  }
+  .restos1 {
+    display: flex;
+    width: 50%;
+    padding-right: 10px;
+  }
+  .restos2 {
+    display: flex;
+    width: 50%;
+  }
+  .restaurants__fiche {
+    width: 50%;
+    margin: 0 10px;
+  }
+  .restaurants__image {
+    display: flex;
+  }
+  .restaurants__image img {
+    object-position: 0;
+  }
+  .restaurants__image img.la-note-enchantee {
+    object-position: 0;
+  }
+  h3 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) { /* *************** Version Tablette ************* */
+  .reservez {
+    padding: 10px;
+  }
+  .reservez p {
+    margin: 0 0 20px;
+  }
+  .reservez h1 {
+    margin: 10px 0;
+  }
+  br {
+    display: none;
+  }
+  nav {
+    padding: 0 20px;
+    margin-bottom: 0;
+  }
+  .selection {
+    width: 300px;
+  }
+  .choix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .restos {
+    display: flex;
+    flex-direction: column;
+  }
+  .restos1 {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .restos2 {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .restaurants__fiche {
+    width: 40%;
+    margin: 10px 0;
+  }
+  .restaurants__image {
+    display: flex;
+  }
+  .restaurants__image img {
+    object-position: 0;
+  }
+  .restaurants__image img.la-note-enchantee {
+    object-position: 0;
+  }
+}
+/* ***************************** Import Page des différents Restaurants ********************* */
+.header-restaurants, .footer-restaurants, .footer-laNoteEnchantee {
+  animation: apparitionProgressive 2s;
+}
+
+.main-restaurants {
+  display: flex;
+  flex-direction: column;
+  animation: apparitionProgressive 2s;
+}
+
+.image img {
+  width: 100%;
+  object-fit: cover;
+}
+.image img.resto-la-note-enchantee {
+  height: 100%;
+}
+.image.image-note-enchantee {
+  height: 400px;
+}
+
+.menus {
+  margin-top: -50px;
+  background-color: #F7F7F7;
+  border-radius: 50px 50px 0 0;
+  padding: 30px 20px;
+}
+.menus h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 28px;
+  font-weight: 300;
+  margin: 0;
+}
+.menus h2 {
+  font-size: 18px;
+  font-weight: 400;
+  height: 22px;
+  width: 45px;
+  margin: 30px 0 10px;
+  border-bottom: 5px solid #99E2D0;
+}
+.menus h3 {
+  font-size: 1.15rem;
+  padding: 0;
+  margin: 10px 10px 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menus__nom {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+.menus__element {
+  display: flex;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 12px #E9E9E9;
+}
+.menus__element.element1 {
+  animation: apparitionProgressive 0.5s 0.2s both, montee 0.5s 0.2s both;
+}
+.menus__element.element2 {
+  animation: apparitionProgressive 0.5s 0.4s both, montee 0.5s 0.4s both;
+}
+.menus__element.element3 {
+  animation: apparitionProgressive 0.5s 0.6s both, montee 0.5s 0.6s both;
+}
+.menus__element.element4 {
+  animation: apparitionProgressive 0.5s 0.8s both, montee 0.5s 0.8s both;
+}
+.menus__element.element5 {
+  animation: apparitionProgressive 0.5s 1s both, montee 0.5s 1s both;
+}
+.menus__element.element6 {
+  animation: apparitionProgressive 0.5s 1.2s both, montee 0.5s 1.2s both;
+}
+.menus__element.element7 {
+  animation: apparitionProgressive 0.5s 1.4s both, montee 0.5s 1.4s both;
+}
+.menus__element.element8 {
+  animation: apparitionProgressive 0.5s 1.6s both, montee 0.5s 1.6s both;
+}
+.menus__element.element9 {
+  animation: apparitionProgressive 0.5s 1.8s both, montee 0.5s 1.8s both;
+}
+.menus__element.element10 {
+  animation: apparitionProgressive 0.5s 2s both, montee 0.5s 2s both;
+}
+.menus__element:hover {
+  cursor: pointer;
+}
+.menus__element:hover .element__name {
+  display: flex;
+  width: 80%;
+}
+.menus__element:hover .element__validation {
+  width: 20%;
+}
+.menus__element:hover .element__validation i {
+  animation: rotation 0.5s backwards;
+}
+.menus .btn {
+  margin: 40px auto 20px;
+  width: 150px;
+  text-align: center;
+}
+
+.element__name {
+  width: 100%;
+  display: flex;
+  padding: 5px 5px 0;
+  flex-direction: column;
+  box-sizing: border-box;
+  transition: width 0.5s;
+}
+.element__detail {
+  display: flex;
+  justify-content: space-between;
+}
+.element__validation {
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  font-size: 25px;
+  width: 0%;
+  transition: width 0.5s;
+  background-color: #99E2D0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.element__validation i {
+  color: #FFFFFF;
+}
+
+.intitule {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 400;
+  margin: 0 10px 10px;
+}
+
+.prix {
+  padding: 0;
+  margin: 0 10px;
+}
+
+@media screen and (min-width: 992px) { /* ******************** Version Desktop **************** */
+  .image {
+    height: 400px;
+  }
+  .image img {
+    object-position: 0 -250px;
+  }
+  .image img.resto-la-note-enchantee {
+    object-position: 0 -450px;
+  }
+  .menus {
+    display: flex;
+    flex-direction: column;
+  }
+  .menus__entrees, .menus__plats, .menus__desserts {
+    margin: 0 5px;
+    width: 32%;
+  }
+  .repas {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) { /* ********** Version Tablette *************** */
+  .image {
+    height: 400px;
+  }
+  .image img {
+    object-position: 0 0px;
+  }
+  .image img.resto-la-note-enchantee {
+    object-position: 0 -450px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
